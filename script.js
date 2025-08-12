@@ -11,17 +11,19 @@ const getSum = () => {
       sum += val;
     }
   });
+
   let totalRow = document.getElementById("total");
   if (!totalRow) {
     totalRow = document.createElement("tr");
     totalRow.id = "total";
     const totalCell = document.createElement("td");
     totalCell.colSpan = 2; 
-    totalCell.textContent = `Total Price: ${sum}`;
+    totalCell.id = "ans"; 
+    totalCell.textContent = sum; 
     totalRow.appendChild(totalCell);
     document.querySelector("table").appendChild(totalRow);
   } else {
-    totalRow.querySelector("td").textContent = `Total Price: ${sum}`;
+    totalRow.querySelector("#ans").textContent = sum;
   }
 };
 
